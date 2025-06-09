@@ -16,8 +16,8 @@ export const SAMPLE_VANS: Van[] = [
     name: 'Rifino',
     tagline: 'Explore the Blue Pearl & Rif Mountains',
     description: 'Compact and agile, Rifino is your perfect companion for navigating the charming streets of Chefchaouen and the scenic routes of the Rif Mountains. Ideal for couples or solo adventurers seeking authentic Moroccan experiences.',
-    pricePerDay: 800,
-    imageUrl: 'https://picsum.photos/seed/rifino/600/400', // Placeholder, ideally replace with an actual Rifino van image
+    pricePerDay: 700,
+    imageUrl: '/hero.jpg', // Placeholder, ideally replace with an actual Rifino van image
     features: ['Kitchenette', 'Convertible Bed', 'Mountain Maps', 'Compact Size', 'Solar Power'],
     capacity: 2,
   },
@@ -26,8 +26,8 @@ export const SAMPLE_VANS: Van[] = [
     name: 'Tangy Nomad',
     tagline: 'Coastal Adventures from Tangier',
     description: 'Spacious and comfortable, the Tangy Nomad is ready for your coastal explorations starting from Tangier. Enjoy the sea breeze and discover hidden gems along Morocco\'s northern coast. Perfect for small groups or families.',
-    pricePerDay: 1000,
-    imageUrl: 'https://picsum.photos/seed/tangynomad/600/400', // Placeholder, ideally replace with an actual Tangy Nomad van image
+    pricePerDay:700,
+    imageUrl: '/hero.jpg', // Placeholder, ideally replace with an actual Tangy Nomad van image
     features: ['Awning', 'Outdoor Shower', 'Spacious Interior', 'Coastal Guides', 'Fridge/Freezer'],
     capacity: 3,
   }
