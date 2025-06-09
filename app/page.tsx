@@ -137,7 +137,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SAMPLE_TESTIMONIALS.slice(0, 4).map(testimonial => (
               <div key={testimonial.id} className="p-8 modern-card bg-gray-50 relative">
-                <div className="absolute -top-5 -left-5 text-6xl text-primary opacity-20">"</div>
+                <div className="absolute -top-5 -left-5 text-6xl text-primary opacity-20"></div>
                 <p className="italic mb-6 relative z-10">{testimonial.quote}</p>
                 <div className="flex items-center">
                   {testimonial.avatarUrl && (
@@ -194,10 +194,10 @@ export default function Home() {
           <div className="space-y-8 max-w-4xl mx-auto">
             <div className="modern-card p-6 hover:border-l-4 hover:border-primary transition-all">
               <h3 className="text-xl font-bold mb-3">Do I need a special license to drive your vans?</h3>
-              <p className="text-gray-600">No, a standard driver's license is sufficient for our vans. International visitors should have an International Driving Permit alongside their home country license.</p>
+              <p className="text-gray-600">{"No, a standard driver's license is sufficient for our vans. International visitors should have an International Driving Permit alongside their home country license."}</p>
             </div>
             <div className="modern-card p-6 hover:border-l-4 hover:border-primary transition-all">
-              <h3 className="text-xl font-bold mb-3">What's included in the rental price?</h3>
+              <h3 className="text-xl font-bold mb-3">{"What's included in the rental price?"}</h3>
               <p className="text-gray-600">Our rental price includes the fully-equipped van, basic insurance, roadside assistance, and a detailed guidebook with tips and recommendations.</p>
             </div>
             <div className="modern-card p-6 hover:border-l-4 hover:border-primary transition-all">
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
             <div className="modern-card p-6 hover:border-l-4 hover:border-primary transition-all">
               <h3 className="text-xl font-bold mb-3">What if I have a breakdown?</h3>
-              <p className="text-gray-600">All our vans come with 24/7 roadside assistance. Simply call our emergency number, and we'll help resolve the issue as quickly as possible.</p>
+              <p className="text-gray-600">{"All our vans come with 24/7 roadside assistance. Simply call our emergency number, and we'll help resolve the issue as quickly as possible."}</p>
             </div>
           </div>
         </div>

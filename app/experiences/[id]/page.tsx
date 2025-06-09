@@ -17,7 +17,7 @@ export default function ExperienceDetailPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <h1 className="text-3xl font-bold mb-4">Experience Not Found</h1>
-        <p className="mb-8 text-gray-600 max-w-md mx-auto">Sorry, we couldn't find the experience you're looking for.</p>
+        <p className="mb-8 text-gray-600 max-w-md mx-auto">{"Sorry, we couldn't find the experience you're looking for."}</p>
         <Link href="/" className="btn-primary">
           Return Home
         </Link>
