@@ -97,30 +97,30 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-gray-500 bg-opacity-50 z-50 flex items-center justify-center p-4">
       <div className="bg-white rounded-xl shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="sticky top-0 bg-white p-4 border-b flex justify-between items-center">
-          <h2 className="text-2xl font-bold">Book Your Van</h2>
+        <div className="sticky top-0 bg-white p-4 border-b border-gray-200 flex justify-between items-center">
+          <h2 className="text-2xl font-bold text-gray-900">Book Your Van</h2>
           <button 
             onClick={resetAndClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
 
         {isBookingComplete ? (
-          <div className="p-8 text-center">
+          <div className="p-8 text-center bg-white">
             <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold mb-4">Booking Confirmed!</h3>
-            <p className="mb-2">Thank you for booking with Herivan.</p>
-            <p className="mb-6">Your booking reference: <span className="font-bold">{bookingReference}</span></p>
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">Booking Confirmed!</h3>
+            <p className="mb-2 text-gray-700">Thank you for booking with Herivan.</p>
+            <p className="mb-6 text-gray-700">Your booking reference: <span className="font-bold text-gray-900">{bookingReference}</span></p>
             <p className="text-sm text-gray-500 mb-6">A confirmation email has been sent to {formData.email}</p>
             <button 
               onClick={resetAndClose}
@@ -130,10 +130,10 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="bg-white">
             <div className="p-6">
               {/* Van Summary */}
-              <div className="flex items-center mb-6 p-4 bg-gray-50 rounded-lg">
+              <div className="flex items-center mb-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
                 <div className="w-24 h-24 relative rounded-md overflow-hidden mr-4">
                   <Image 
                     src={van.imageUrl} 
@@ -143,7 +143,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">{van.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-900">{van.name}</h3>
                   <p className="text-gray-600">{van.tagline}</p>
                   <p className="font-bold text-primary">{van.pricePerDay} MAD/day</p>
                 </div>
@@ -152,11 +152,11 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
               {/* Step Indicator */}
               <div className="flex justify-between mb-8">
                 <div className="flex items-center">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep >= 1 ? 'bg-primary text-white' : 'bg-gray-200'}`}>1</div>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep >= 1 ? 'bg-primary text-white' : 'bg-gray-200 text-gray-600'}`}>1</div>
                   <div className={`h-1 w-12 ${currentStep >= 2 ? 'bg-primary' : 'bg-gray-200'}`}></div>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep >= 2 ? 'bg-primary text-white' : 'bg-gray-200'}`}>2</div>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep >= 2 ? 'bg-primary text-white' : 'bg-gray-200 text-gray-600'}`}>2</div>
                   <div className={`h-1 w-12 ${currentStep >= 3 ? 'bg-primary' : 'bg-gray-200'}`}></div>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep >= 3 ? 'bg-primary text-white' : 'bg-gray-200'}`}>3</div>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${currentStep >= 3 ? 'bg-primary text-white' : 'bg-gray-200 text-gray-600'}`}>3</div>
                 </div>
                 <div className="text-sm text-gray-500">
                   {currentStep === 1 && 'Dates'}
@@ -168,7 +168,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
               {/* Step 1: Date Selection */}
               {currentStep === 1 && (
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Select Your Dates</h3>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">Select Your Dates</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
@@ -179,7 +179,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                         onChange={handleInputChange}
                         min={new Date().toISOString().split('T')[0]}
                         required
-                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                       />
                     </div>
                     <div>
@@ -191,19 +191,19 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                         onChange={handleInputChange}
                         min={formData.startDate || new Date().toISOString().split('T')[0]}
                         required
-                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                       />
                     </div>
                   </div>
 
                   {formData.startDate && formData.endDate && (
-                    <div className="bg-gray-50 p-4 rounded-md mb-6">
-                      <h4 className="font-medium mb-2">Booking Summary</h4>
-                      <div className="flex justify-between mb-1">
+                    <div className="bg-gray-50 p-4 rounded-md mb-6 border border-gray-200">
+                      <h4 className="font-medium mb-2 text-gray-900">Booking Summary</h4>
+                      <div className="flex justify-between mb-1 text-gray-700">
                         <span>Daily Rate:</span>
                         <span>{van.pricePerDay} MAD</span>
                       </div>
-                      <div className="flex justify-between mb-1">
+                      <div className="flex justify-between mb-1 text-gray-700">
                         <span>Number of Days:</span>
                         <span>
                           {(() => {
@@ -214,7 +214,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                           })()}
                         </span>
                       </div>
-                      <div className="flex justify-between font-bold text-lg mt-2 pt-2 border-t">
+                      <div className="flex justify-between font-bold text-lg mt-2 pt-2 border-t border-gray-300 text-gray-900">
                         <span>Total:</span>
                         <span>{calculateTotalPrice()} MAD</span>
                       </div>
@@ -226,7 +226,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
               {/* Step 2: Personal Details */}
               {currentStep === 2 && (
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Your Details</h3>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">Your Details</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">First Name</label>
@@ -236,7 +236,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
-                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                       />
                     </div>
                     <div>
@@ -247,7 +247,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
-                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                       />
                     </div>
                   </div>
@@ -261,7 +261,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                       />
                     </div>
                     <div>
@@ -272,7 +272,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                         value={formData.phone}
                         onChange={handleInputChange}
                         required
-                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                       />
                     </div>
                   </div>
@@ -282,7 +282,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
               {/* Step 3: Payment */}
               {currentStep === 3 && (
                 <div>
-                  <h3 className="text-xl font-bold mb-4">Payment Details</h3>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">Payment Details</h3>
                   <div className="mb-4">
                     <label className="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
                     <input 
@@ -293,7 +293,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                       placeholder="1234 5678 9012 3456"
                       required
                       maxLength={19}
-                      className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                     />
                   </div>
 
@@ -308,7 +308,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                         placeholder="MM/YY"
                         required
                         maxLength={5}
-                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                       />
                     </div>
                     <div>
@@ -321,14 +321,14 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                         placeholder="123"
                         required
                         maxLength={3}
-                        className="w-full p-2 border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
+                        className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900"
                       />
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 p-4 rounded-md mb-6">
-                    <h4 className="font-medium mb-2">Payment Summary</h4>
-                    <div className="flex justify-between mb-1">
+                  <div className="bg-gray-50 p-4 rounded-md mb-6 border border-gray-200">
+                    <h4 className="font-medium mb-2 text-gray-900">Payment Summary</h4>
+                    <div className="flex justify-between mb-1 text-gray-700">
                       <span>Total Amount:</span>
                       <span>{calculateTotalPrice()} MAD</span>
                     </div>
@@ -340,12 +340,12 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
               )}
             </div>
 
-            <div className="p-4 border-t flex justify-between">
+            <div className="p-4 border-t border-gray-200 flex justify-between bg-white">
               {currentStep > 1 ? (
                 <button 
                   type="button"
                   onClick={handlePrevStep}
-                  className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                  className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors text-gray-700"
                 >
                   Back
                 </button>
@@ -353,7 +353,7 @@ export default function BookingModal({ van, isOpen, onClose }: BookingModalProps
                 <button 
                   type="button"
                   onClick={onClose}
-                  className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                  className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors text-gray-700"
                 >
                   Cancel
                 </button>
